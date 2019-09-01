@@ -20,7 +20,7 @@ Place the script to /var/prtg/scriptsxml on your Synology NAS and make it execut
 ```
 wget https://raw.githubusercontent.com/WAdama/nas_btrfs_stats/master/nas_btrfs_stats.sh
 
-chmod +x nas_ab_status.sh
+chmod +x nas_btrfs_stats.sh
 ```
 
 On your PRTG system place the file prtg.standardlookups.nas.btrfsstats.ovl in *INSTALLDIR\PRTG Network Monitor\lookups\custom* and refresh it under **System Administration / Administrative Tools**
