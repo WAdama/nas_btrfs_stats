@@ -18,33 +18,19 @@ I personally use "Login via private key" with an user especially for monitoring 
 Place the script to /var/prtg/scriptsxml on your Synology NAS and make it executable. (You may have to create this directory structure because PRTG expects the script here.)
 
 ```
-wget https://raw.githubusercontent.com/WAdama/nas_ab_status/master/nas_ab_status.sh
-or
-wget https://raw.githubusercontent.com/WAdama/nas_ab_status/master/nas_ab_status_m.sh
+wget https://raw.githubusercontent.com/WAdama/nas_btrfs_stats/master/nas_btrfs_stats.sh
+
 chmod +x nas_ab_status.sh
 ```
 
-On your PRTG system place the file prtg.standardlookups.nas.abstatus.ovl in *INSTALLDIR\PRTG Network Monitor\lookups\custom* and refresh it under **System Administration / Administrative Tools**
+On your PRTG system place the file prtg.standardlookups.nas.btrfsstats.ovl in *INSTALLDIR\PRTG Network Monitor\lookups\custom* and refresh it under **System Administration / Administrative Tools**
 
 In PRTG create under your device which represents your Synology a SSH custom advanced senor.
 
-Choose under "Script" this script and enter under "Parameters" the name of the device backed up in Active Backup for Business you want to monitor: e.g. Server1.
+Choose under "Script" this script and enter under "Parameters" the name of the volume you want to monitor: e.g. volume1.
 
 ![Screenshot1](https://github.com/WAdama/nas_btrfs_stats/blob/master/images/nas_btrfs_stats.png)
 
-For the multiple device sensor create a conf file in your Synology's file system.
-
-The configuration file must contain the following entry according to your devices:
-
-```
-DEVICE=(Device1 Device2 Server1 Server2)
-```
-Instead of the device name in "Parameters" enter path and name of config file.
-
-This script will set default values for limits in the Passed time channel:
-
-Upper warning limit: 36 h (129600 s)
-
-Upper error limit: 60 h (216000 s)
+This sensor will go to warning if one or more value show one or more errors.
 
 ![Screenshot1](https://github.com/WAdama/nas_btrfs_stats/blob/master/images/nas_btrfs_stats_sensor.png)
