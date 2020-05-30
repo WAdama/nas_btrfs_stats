@@ -5,7 +5,7 @@
         Ok
       </SingleInt>
       <SingleInt state="Error" value="1">
-        Failed
+        Error detected!
       </SingleInt>
     </Lookups>
   </ValueLookup>
