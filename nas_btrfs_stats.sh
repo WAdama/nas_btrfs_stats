@@ -6,8 +6,6 @@ ERRTOTAL=0
 while read line ; do
 IFS="." read DEVICE ERRMESSAGE <<< `echo $line | awk '{ print $1 }'`
 ERRCOUNT=`echo $line | awk '{ print $2 }'`
-#echo $ERRMESSAGE
-#echo $line | awk '{ print $2 }'
 eval $ERRMESSAGE=$ERRCOUNT
 ERRTOTAL=$((ERRTOTAL + ERRCOUNT))
 done <<<"$(btrfs dev stats /$VOL)"
