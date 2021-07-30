@@ -1,7 +1,7 @@
 # nas_btrfs_stats
 Simple script to create a sensor for PRTG by Paessler which uses the output of ***btrfs dev stats*** to show the health of your Btrfs volume.
 
-Sensor tested on DS 918+ with DSM 6.2.4-25556
+Sensor tested on DS 918+ with DSM 6.2.4-25556 and 7.0-41890
 
 ### Prerequisites
 
