@@ -1,10 +1,10 @@
 #!/bin/bash
-# Version 1.0
+# Version 1.0.1
 VOL=$1
 
 ERRTOTAL=0
 while read line ; do
-IFS="." read DEVICE ERRMESSAGE <<< `echo $line | awk '{ print $1 }'`
+IFS="." read DEVICE ERRMESSAGE <<< $(echo $line | awk '{ print $1 }')
 ERRCOUNT=`echo $line | awk '{ print $2 }'`
 eval $ERRMESSAGE=$ERRCOUNT
 ERRTOTAL=$((ERRTOTAL + ERRCOUNT))
